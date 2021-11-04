@@ -5,7 +5,7 @@ const jewellery =[
         name: 'Vintage Set',
         price: '5.99',
         like: true,
-        Image: require('assets\images\set-1.jpg'),
+        Image: require('../images/set-1.jpg'),
     },
 
     {
@@ -13,7 +13,7 @@ const jewellery =[
         name: 'IPARAM Bohemian set',
         price: '6.99',
         like: true,
-        image: require('assets\images\set-2.webp'),
+        Image: require('../images/set-2.jpg'),
     },
 
     {
@@ -21,7 +21,7 @@ const jewellery =[
         name: 'Dainty Set',
         price: '6.99',
         like: true,
-        image: require('assets\images\set-3.jpg')
+        Image: require('../images/set-3.jpg'),
     },
 
     {
@@ -29,7 +29,7 @@ const jewellery =[
         name: 'AprilWell Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-4.jpg')
+        Image: require('../images/set-4.jpg'),
     },
 
     {
@@ -37,7 +37,7 @@ const jewellery =[
         name: 'Butterfly Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-5.jpg'),
+        Image: require('../images/set-5.jpg'),
     },
 
     {
@@ -45,7 +45,7 @@ const jewellery =[
         name: 'Rainbow White Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-6.jpg'),
+        Image: require('../images/set-6.jpg'),
     },
 
     {
@@ -53,7 +53,7 @@ const jewellery =[
         name: 'Snakebite Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-7.jpg'),
+        Image: require('../images/set-7.jpg'),
     },
 
     {
@@ -61,7 +61,7 @@ const jewellery =[
         name: 'Coil Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-8.jpg'),
+        Image: require('../images/set-8.jpg'),
     },
 
     {
@@ -69,7 +69,7 @@ const jewellery =[
         name: 'Complete Silver Set',
         price: '15.99',
         like: true,
-        image: require('assets\images\set-9.jpg'),
+        Image: require('../images/set-9.jpg'),
     },
 
     {
@@ -77,7 +77,7 @@ const jewellery =[
         name: 'Width Set',
         price: '9.99',
         like: true,
-        image: require('assets\images\set-10.jpg'),
+        Image: require('../images/set-10.jpg'),
     },
 
     {
@@ -85,7 +85,7 @@ const jewellery =[
         name: 'Sterling Silver Set',
         price: '6.99',
         like: true,
-        image: require('assets\images\set-11.JPG')
+        Image: require('../images/set-11.jpg'),
     },
 
     {
@@ -93,7 +93,9 @@ const jewellery =[
         name: 'Flower Set',
         price: '5.99',
         like: true,
-        image: require('assets\images\set-12.jpg'),
+        Image: require('../images/set-12.jpg'),
     },
 
 ]
+
+export default jewellery

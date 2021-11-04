@@ -2,13 +2,16 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
 import { Button, Dimensions, FlatList, SafeAreaView, StyleSheet, TextInput } from "react-native";
 import {View,Text} from "react-native";
-import COLOURS from "../../const/colours";
-import Icon from "react-native-vector-icons";
-import jewellery from "../../jewellry";
+import COLOURS from "../const/colours";
+import Icon from "react-native-vector-icons/AntDesign";
+import Icon1 from "react-native-vector-icons/MaterialCommunityIcons"
+import jewellery from "../jewellery/jewellery";
+
 const width = Dimensions.get("screen").width/2-30;
 const HomeScreen = () => {
+
     const Card = (item) =>{
-     return <View style= {style.card}></View>
+     return <View style= {style.Card}></View>
     } 
     return (
         <SafeAreaView
@@ -23,31 +26,31 @@ const HomeScreen = () => {
                     <Text style ={{ fontSize:16, fontStyle: 'italic', colour: COLOURS.gold}}>to</Text>
                     <Text style ={{ fontSize:38, fontWeight: 'bold', fontStyle: 'italic', fontWeight: 'bold', colour: COLOURS.purple}}>MAMBO</Text>
                 </View>
-                <Icon name= "cart" size= {28}/>
+                <Icon name= "shoppingcart" size= {28}/>
                 </View>
                <View style= {{marginTop:30,flexDirection: 'row',}}>
                    <View style= {style.searchcontainer}>
-                       <Icon name= "search" size={30} style={{marginleft: 20}}/>
+                       <Icon name= "search1" size={30} style={{marginleft: 20}}/>
                        <TextInput placeholder="Search" style={style.input}/>
                     </View>
                     <View style={style.sortBtn}>
-                        <Icon name="sort" size={30} color={COLOURS.purple}/>
+                        <Icon1 name="sort" size={30} color={COLOURS.purple}/>
                     </View>
 
-               </View>
+            </View>
                <FlatList 
                columnWrapperStyle={{justifyContent: 'space-between'}}
                showsVerticalScrollIndicator={false}
                contentContainerStyle= 
                {
-                   {marginTop: 12},
-                   {paddingBottom: 50},
-                } 
+                  ( {marginTop: 12},
+                   {paddingBottom: 50})
+                  }
                numColumns= {2}
 
                data={jewellery} 
                renderItem={({item})=> <Card jewellery= {item}/>}></FlatList>
-            </SafeAreaView>
+        </SafeAreaView>
     );
 };
 

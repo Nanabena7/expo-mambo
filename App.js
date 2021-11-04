@@ -1,15 +1,15 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-const stack= createStackNavigator();
-import HomeScreen from './assets/view/screens/HomeScreen';
-import SignupScreen from './assets/view/screens/SignupScreen';
-import LoginScreen from './assets/view/screens/LoginScreen';
-import LandingScreen from './assets/view/screens/LandingSceen';
-import DetailsScreen from './assets/view/screens/DetailsScreen';
-import Checkout from './assets/view/screens/Checkout';
-import CartScreen from './assets/view/screens/CartScreen';
+import HomeScreen from './assets/screens/HomeScreen';
+import SignupScreen from './assets/screens/SignupScreen';
+import LoginScreen from './assets/screens/LoginScreen';
+import LandingScreen from './assets/screens/LandingSceen';
+import DetailsScreen from './assets/screens/DetailsScreen';
+import Checkout from './assets/screens/Checkout';
+import CartScreen from './assets/screens/CartScreen';
 import COLOURS from './assets/const/colours';
  
 
@@ -19,17 +19,22 @@ import COLOURS from './assets/const/colours';
 
 
 const App = () => {
-  return ( <NavigationContainer>
+
+  const Stack= createStackNavigator();
+
+  return ( 
+
+  <NavigationContainer>
     <StatusBar barstyle="dark-content" backgroundColor={COLOURS.violet} />
-    <stack.navigator screenOptions= {{header: () => null}}>
-      <stack.screen name= "Home" component={HomeScreen}/>
-      <stack.screen name= "Signup" component={SignupScreen}/>
-      <stack.screen name= "Login" component={LoginScreen}/>
-      <stack.screen name= "Landing" component={LandingScreen}/>
-      <stack.scrren name= "Details" component={DetailsScreen}/>
-      <stack.screen name= "Checkout" component={Checkout}/>
-      <stack.screen name= "Cart" component={CartScreen}/>
-    </stack.navigator>
+    <Stack.Navigator screenOptions= {{header: () => null}}>
+      <Stack.Screen name= "Landing" component={LandingScreen}/>
+      <Stack.Screen name= "Home" component={HomeScreen}/>
+      <Stack.Screen name= "Signup" component={SignupScreen}/>
+      <Stack.Screen name= "Login" component={LoginScreen}/>
+      <Stack.Screen name= "Details" component={DetailsScreen}/>
+      <Stack.Screen name= "Checkout" component={Checkout}/>
+      <Stack.Screen name= "Cart" component={CartScreen}/>
+    </Stack.Navigator>
   </NavigationContainer>
   );
 };
