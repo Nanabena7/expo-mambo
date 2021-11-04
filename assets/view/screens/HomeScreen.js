@@ -1,10 +1,15 @@
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, TextInput } from "react-native";
-import {View,Text,Button} from "react-native";
+import { Button, Dimensions, FlatList, SafeAreaView, StyleSheet, TextInput } from "react-native";
+import {View,Text} from "react-native";
 import COLOURS from "../../const/colours";
 import Icon from "react-native-vector-icons";
+import jewellery from "../../jewellry";
+const width = Dimensions.get("screen").width/2-30;
 const HomeScreen = () => {
+    const Card = (item) =>{
+     return <View style= {style.card}></View>
+    } 
     return (
         <SafeAreaView
             style={{
@@ -21,11 +26,27 @@ const HomeScreen = () => {
                 <Icon name= "cart" size= {28}/>
                 </View>
                <View style= {{marginTop:30,flexDirection: 'row',}}>
-                   <View>
+                   <View style= {style.searchcontainer}>
                        <Icon name= "search" size={30} style={{marginleft: 20}}/>
-                       <TextInput placeholder="Search"/>
+                       <TextInput placeholder="Search" style={style.input}/>
                     </View>
+                    <View style={style.sortBtn}>
+                        <Icon name="sort" size={30} color={COLOURS.purple}/>
+                    </View>
+
                </View>
+               <FlatList 
+               columnWrapperStyle={{justifyContent: 'space-between'}}
+               showsVerticalScrollIndicator={false}
+               contentContainerStyle= 
+               {
+                   {marginTop: 12},
+                   {paddingBottom: 50},
+                } 
+               numColumns= {2}
+
+               data={jewellery} 
+               renderItem={({item})=> <Card jewellery= {item}/>}></FlatList>
             </SafeAreaView>
     );
 };
@@ -35,6 +56,38 @@ const style = StyleSheet.create({
         marginTop: 30,
         flexDirection: 'row',
         justifyContent: 'space-between',
+    },
+    searchcontainer:{
+        height: 50,
+        backgroundColor: COLOURS.white,
+        borderRadius:10,
+        flex: 1,
+        flexDirection:'row',
+        alignItems: 'center',
+    },
+    input:{
+        fontSize: 18,
+        fontWeight: "bold",
+        color: COLOURS.purple,
+        flex: 1,
+    },
+    sortBtn: {
+        marginLeft: 10,
+        height: 55,
+        width: 50,
+        backgroundColor: COLOURS.white,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 12,
+    },
+    Card: {
+        height: 230,
+        backgroundColor: COLOURS.white,
+        width,
+        marginBottom: 20,
+        marginHorizontal: 2,
+        borderRadius: 10,
+        padding: 20,
     }
 })
 
