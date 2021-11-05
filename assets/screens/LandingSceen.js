@@ -1,97 +1,87 @@
-import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, TextInput,TouchableOpacity,Platform,StatusBar,Alert, Dimensions } from "react-native";
-import {View,Text} from "react-native";
+import {View, Text, Button, TextInput,StyleSheet, Image} from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon1 from "react-native-vector-icons/FontAwesome5";
+import Icon2 from "react-native-vector-icons/AntDesign";
+import Logo from "../images/Logo.jpg";
 import COLOURS from "../const/colours";
-import { useTheme } from 'react-native-paper';
-import Icon from "react-native-vector-icons/MaterialIcons"
 
-//import LinearGradient from 'react-native-linear-gradient';
-
-
-const LandingScreen = ({navigation}) => {
-    const { COLOURS } = useTheme();
-
-    return (
-      <View style={styles.container}>
-          <StatusBar backgroundColor= "#ffff00" 
-          barStyle="light-content"/>
-        <View style={styles.header}>
-
-        </View>
-        /
-            <Text style={[styles.title, {
-                color: COLOURS
-            }] }>Welcome</Text>
-            <Text style={styles.text}>Sign in with account</Text>
-            <View style={styles.button}>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
-                {/* <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
-                    style={styles.signIn}
-                > */}
-                    <Text style={styles.textSign}>Get Started</Text>
-                    <Icon 
-                        name="navigate-next"
-                        color="#fff"
-                        size={20}
-                    />
-            </TouchableOpacity>
-            </View>
+const landing_page = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.topContainer}>
+        <Text style={styles.h1}>WELCOME to</Text>
+        <Text style={styles.h2}>Providing quality but affordable adornments.</Text>
       </View>
-    );
-};
-
-export default LandingScreen;
-
-const {height} = Dimensions.get("screen");
-const height_logo = height * 0.28;
+      <View style={styles.containerRightAligned}>
+        <Image source={Logo} style={styles.image}/>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="SIGN UP"
+          style={styles.Button}
+          onPress={() => this.onPress()}
+          color="#000"
+        />
+        <Button
+        title= "LOGIN"
+        STYLE={styles.Button}
+        onPress={() => this.onPress()}
+        color= {COLOURS.gold}
+        />
+        </View>
+    </View>
+  )
+}
+export default landing_page
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
-    backgroundColor: COLOURS.violet
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: "#FF99CC",
+    alignItems: 'center',
+    width: '100%',
   },
-  header: {
-      flex: 2,
-      justifyContent: 'center',
-      alignItems: 'center'
+  h1: {
+    color: '#000000',
+    fontSize: 40,
   },
-  footer: {
-      flex: 1,
-      backgroundColor: COLOURS.violet,
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
-      paddingVertical: 50,
-      paddingHorizontal: 30
+  h2: {
+    color: '#FAE042',
+    fontSize: 18,
+    marginTop: 8,
   },
-  logo: {
-      width: height_logo,
-      height: height_logo
+  image: {
+    width: 300,
+    height:260,
+    justifyContent: "center",
   },
-  title: {
-      color: COLOURS.gold,
-      fontSize: 30,
-      fontWeight: 'bold'
+  buttonContainer: {
+    backgroundColor: '#008F68',
+    borderRadius: 5,
+    padding: 8,
+    margin: 8,
   },
-  text: {
-      color: COLOURS.gold,
-      marginTop:5
+  topContainer: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  button: {
-      alignItems: 'flex-end',
-      marginTop: 30
+middleContainer: {
+    flex: 3,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
-  signIn: {
-      width: 150,
-      height: 40,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 50,
-      flexDirection: 'row'
+bottomContainer: {
+    justifyContent: 'flex-end',
+    width: '90%',
+    margin: 20,
+    padding: 10,
   },
-  textSign: {
-      color: 'white',
-      fontWeight: 'bold'
-  }
+  containerRightAligned: {
+    position: 'absolute',
+    right: 50,
+    top: '50%',
+    alignItems: 'stretch',   },
 });
