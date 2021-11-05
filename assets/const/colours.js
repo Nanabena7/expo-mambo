@@ -3,6 +3,7 @@ const COLOURS = {
     violet: '#330066' ,
     purple: '#990099' ,
     gold: '#ffff00' ,
+    olive: '#556B2F',
 
 };
 

@@ -25,7 +25,8 @@
     "react-native-web": "^0.17.5",
     "react-navigation": "^4.4.4",
     "save": "^2.4.0",
-    "stack": "^0.1.0"
+    "stack": "^0.1.0",
+    "expo-font": "~9.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

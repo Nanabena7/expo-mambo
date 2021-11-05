@@ -5,6 +5,9 @@ import Icon1 from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/AntDesign";
 import Logo from "../images/Logo.jpg";
 import COLOURS from "../const/colours";
+import { FontDisplay, useFonts } from "expo-font";
+
+
 
 const landing_page = ({navigation}) => {
   return (
@@ -27,7 +30,7 @@ const landing_page = ({navigation}) => {
         title= "LOGIN"
         STYLE={styles.Button}
         onPress={() => this.onPress()}
-        color= {COLOURS.gold}
+        color= "#000000"
         />
         </View>
     </View>
@@ -39,26 +42,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    backgroundColor: "#FF99CC",
+    backgroundColor: "#556B2F",
     alignItems: 'center',
     width: '100%',
+    
   },
   h1: {
     color: '#000000',
     fontSize: 40,
+    fontStyle: "italic",
+    useFonts: "",
   },
   h2: {
-    color: '#FAE042',
+    color: '#000000',
     fontSize: 18,
     marginTop: 8,
+
   },
   image: {
-    width: 300,
-    height:260,
+    width: 450,
+    height:560,
     justifyContent: "center",
   },
   buttonContainer: {
-    backgroundColor: '#008F68',
+    backgroundColor: '#000000',
     borderRadius: 5,
     padding: 8,
     margin: 8,
@@ -82,6 +89,6 @@ bottomContainer: {
   containerRightAligned: {
     position: 'absolute',
     right: 50,
-    top: '50%',
+    top: '5%',
     alignItems: 'stretch',   },
 });
