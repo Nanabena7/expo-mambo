@@ -1,6 +1,6 @@
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, TextInput,TouchableOpacity,Platform,StatusBar,Alert } from "react-native";
+import { Button, SafeAreaView, StyleSheet, TextInput,TouchableOpacity,Platform,StatusBar,Alert, LogBox } from "react-native";
 import {View,Text} from "react-native";
 import COLOURS from "../const/colours";
 import Icon from "react-native-vector-icons";
@@ -8,8 +8,15 @@ import * as Animatable from 'react-native-animatable';
 //import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+import signinpic from "../images/signinpic.jpg";
 const Login = ({navigation}) => {
 
+    <View style={styles.container}>
+    <Image source={ 
+        require(signinpic.jpg)
+    }
+     style={styles.backgroundImage}/>
+</View>
     const [data, setData] = React.useState({
         username: '',
         password: '',
@@ -19,7 +26,7 @@ const Login = ({navigation}) => {
         isValidPassword: true,
     });
 
-    const { Login } = React.useContext(AuthContext);
+    
 
     const textInputChange = (val) => {
         if( val.trim().length >= 4 ) {
@@ -107,23 +114,23 @@ const Login = ({navigation}) => {
         <Animatable.View 
             animation="fadeInUpBig"
             style={[styles.footer, {
-                backgroundColor: colors.background
+                backgroundColor: COLOURS.white,
             }]}
         >
             <Text style={[styles.text_footer, {
-                color: colors.text
+                color: COLOURS.purple,
             }]}>Username</Text>
             <View style={styles.action}>
                 <FontAwesome 
                     name="user-o"
-                    color={colors.text}
+                    color={COLOURS.gold}
                     size={20}
                 />
                 <TextInput 
                     placeholder="Your Username"
                     placeholderTextColor="#666666"
                     style={[styles.textInput, {
-                        color: colors.text
+                        color: COLOURS.olive,
                     }]}
                     autoCapitalize="none"
                     onChangeText={(val) => textInputChange(val)}
@@ -149,13 +156,13 @@ const Login = ({navigation}) => {
             
 
             <Text style={[styles.text_footer, {
-                color: colors.text,
+                color: COLOURS.violet,
                 marginTop: 35
             }]}>Password</Text>
             <View style={styles.action}>
                 <Feather 
                     name="lock"
-                    color={colors.text}
+                    color={COLOURS.violet}
                     size={20}
                 />
                 <TextInput 
@@ -163,7 +170,7 @@ const Login = ({navigation}) => {
                     placeholderTextColor="#666666"
                     secureTextEntry={data.secureTextEntry ? true : false}
                     style={[styles.textInput, {
-                        color: colors.text
+                        color: COLOURS.violet
                     }]}
                     autoCapitalize="none"
                     onChangeText={(val) => handlePasswordChange(val)}
@@ -197,19 +204,7 @@ const Login = ({navigation}) => {
                 <Text style={{color: '#009387', marginTop:15}}>Forgot password?</Text>
             </TouchableOpacity>
             <View style={styles.button}>
-                <TouchableOpacity
-                    style={styles.signIn}
-                    onPress={() => {loginHandle( data.username, data.password )}}
-                >
-                <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
-                    style={styles.signIn}
-                >
-                    <Text style={[styles.textSign, {
-                        color:'#fff'
-                    }]}>Sign In</Text>
-                </LinearGradient>
-                </TouchableOpacity>
+               
 
                 <TouchableOpacity
                     onPress={() => navigation.navigate('SignUpScreen')}
@@ -232,8 +227,16 @@ const Login = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1, 
-      backgroundColor: '#009387'
+                 flex: 1,
+                 justifyContent: 'center',
+                 alignItems: 'center',
+                 backgroundColor: '#F5FCFF',
+                 flexDirection: 'column',
+            },
+                 backgroundImage:{
+                 width:320,
+                 height:480,
+
     },
     header: {
         flex: 1,
@@ -297,5 +300,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold'
     }
-  });
+});
 export default Login;

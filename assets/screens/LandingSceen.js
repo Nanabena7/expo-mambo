@@ -13,7 +13,7 @@ const landing_page = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Text style={styles.h1}>WELCOME to</Text>
+        <Text style={styles.h1}>WELCOME to . .  .</Text>
         <Text style={styles.h2}>Providing quality but affordable adornments.</Text>
       </View>
       <View style={styles.containerRightAligned}>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 40,
     fontStyle: "italic",
-    useFonts: "",
+    
   },
   h2: {
     color: '#000000',
