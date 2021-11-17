@@ -27,9 +27,9 @@ const App = () => {
   <NavigationContainer>
     <StatusBar barstyle="dark-content" backgroundColor={COLOURS.violet} />
     <Stack.Navigator screenOptions= {{header: () => null}}>
-    <Stack.Screen name= "Signup" component={SignupScreen}/>
+    
       <Stack.Screen name= "Landing" component={LandingScreen}/>
-     
+      <Stack.Screen name= "Signup" component={SignupScreen}/>
       <Stack.Screen name= "Login" component={LoginScreen}/>
       <Stack.Screen name= "Home" component={HomeScreen}/>
       <Stack.Screen name= "Details" component={DetailsScreen}/>

@@ -196,7 +196,7 @@ const SignupScreen = ({navigation}) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => navigation.goBack()}
+                    onPress={() => navigation.navigate("Home")}
                     style={[styles.signIn, {
                         borderColor: '#009387',
                         borderWidth: 1,
@@ -206,6 +206,24 @@ const SignupScreen = ({navigation}) => {
                     <Text style={[styles.textSign, {
                         color: '#330066'
                     }]}>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.goBack()}
+                    style={[styles.signIn, {
+                        borderColor: '#009387',
+                        borderWidth: 1,
+                        marginTop: 15
+                    }]}>
+                
+                    <Text style={[styles.textSign, {
+                        color: '#330066'
+                    }]}>Back</Text>
+                    {/* <Button
+                    title= "Back to landing"
+                    style={{marginBottom: 30}}
+                   onPress={() => navigation.navigate(LandingScreen)}
+                    color= "#000000" */}
+                    {/* /> */}
                 </TouchableOpacity>
             </View>
             </ScrollView>

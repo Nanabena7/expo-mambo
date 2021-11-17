@@ -1,11 +1,12 @@
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, Dimensions, FlatList, SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { Button, Dimensions, FlatList, ImageBackground, SafeAreaView, StyleSheet, TextInput } from "react-native";
 import {View,Text} from "react-native";
 import COLOURS from "../const/colours";
 import Icon from "react-native-vector-icons/AntDesign";
 import Icon1 from "react-native-vector-icons/MaterialCommunityIcons"
 import jewellery from "../jewellery/jewellery";
+import home from "../images/home.jpg";
 
 const width = Dimensions.get("screen").width/2-30;
 const HomeScreen = () => {
@@ -18,8 +19,10 @@ const HomeScreen = () => {
             style={{
                 flex: 1,
                 paddingHorizontal: 20,
-                setStatusBarBackgroundColor: COLOURS.violet,
+                setStatusBarBackgroundColor: '#FA8072',
             }}>
+               <ImageBackground style={{flex: 1,}}
+        source= {home} resizeMode= 'cover' > 
             <View style={style.header}>
                 <View>
                     <Text style ={{fontSize:26, fontWeight:'bold', colour: COLOURS.white}}> WELCOME</Text>
@@ -50,6 +53,7 @@ const HomeScreen = () => {
 
                data={jewellery} 
                renderItem={({item})=> <Card jewellery= {item}/>}></FlatList>
+               </ImageBackground>
         </SafeAreaView>
     );
 };

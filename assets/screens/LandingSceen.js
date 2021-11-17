@@ -6,6 +6,8 @@ import Icon2 from "react-native-vector-icons/AntDesign";
 import Logo from "../images/Logo.jpg";
 import COLOURS from "../const/colours";
 import { FontDisplay, useFonts } from "expo-font";
+import SignupScreen from "./SignupScreen";
+import LoginScreen from "./LoginScreen";
 
 
 const landing_page = ({navigation}) => {
@@ -25,7 +27,7 @@ const landing_page = ({navigation}) => {
         <Button
           title="SIGN UP"
           style={styles.Button}
-         // onPress={() => this.onPress()}
+          onPress={() => navigation.navigate("Signup")}
            color="#000"
         />
         <View style={{height: 10}} />
@@ -33,9 +35,10 @@ const landing_page = ({navigation}) => {
         <Button
         title= "LOGIN"
         style={{marginBottom: 30}}
-       // onPress={() => this.onPress()}
+       onPress={() => navigation.navigate("Login")}
         color= "#000000"
         />
+        
         </View>
     </ImageBackground>
       

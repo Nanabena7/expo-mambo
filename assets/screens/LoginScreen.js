@@ -9,6 +9,8 @@ import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import signinpic from "../images/signinpic.jpg";
+import Landing from "./LandingSceen";
+import Home from "./HomeScreen";
 const Login = ({navigation}) => {
 
     
@@ -204,7 +206,7 @@ const [data, setData] = React.useState({
                
 
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('SignUpScreen')}
+                    onPress={() => navigation.navigate('Home')}
                     style={[styles.signIn, {
                         borderColor: '#009387',
                         borderWidth: 1,
@@ -213,8 +215,31 @@ const [data, setData] = React.useState({
                 >
                     <Text style={[styles.textSign, {
                         color: '#009387'
-                    }]}>Sign Up</Text>
+                    }]}>Login</Text>
+                    
+                    
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.goBack()}
+                    style={[styles.signIn, {
+                        borderColor: '#009387',
+                        borderWidth: 1,
+                        marginTop: 15
+                    }]}
+                >
+                    <Text style={[styles.textSign, {
+                        color: '#009387'
+                    }]}>Back</Text>
+                    
+                    
+                </TouchableOpacity>
+                {/* <Button
+                    title= "Back to Home"
+                    style={{marginBottom: 30}}
+                   onPress={() => navigation.goBack()}
+                    color= "#000000"
+                    /> */}
+              
             </View>
         </Animatable.View>
         </ImageBackground>
