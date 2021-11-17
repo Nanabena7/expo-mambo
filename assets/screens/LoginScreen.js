@@ -1,6 +1,6 @@
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, TextInput,TouchableOpacity,Platform,StatusBar,Alert, LogBox } from "react-native";
+import { Button, SafeAreaView, ImageBackground, StyleSheet, TextInput,TouchableOpacity,Platform,StatusBar,Alert, LogBox } from "react-native";
 import {View,Text} from "react-native";
 import COLOURS from "../const/colours";
 import Icon from "react-native-vector-icons";
@@ -11,31 +11,26 @@ import Feather from 'react-native-vector-icons/Feather';
 import signinpic from "../images/signinpic.jpg";
 const Login = ({navigation}) => {
 
-    <View style={styles.container}>
-    <Image source={ 
-        require(signinpic.jpg)
-    }
-     style={styles.backgroundImage}/>
-</View>
-    const [data, setData] = React.useState({
+    
+const [data, setData] = React.useState({
         username: '',
         password: '',
         check_textInputChange: false,
         secureTextEntry: true,
         isValidUser: true,
-        isValidPassword: true,
+        isValidPassword: true
     });
 
     
 
     const textInputChange = (val) => {
-        if( val.trim().length >= 4 ) {
+        if( val.trim().length == 4 ) {
             setData({
                 ...data,
                 username: val,
                 check_textInputChange: true,
                 isValidUser: true
-            });
+            })
         } else {
             setData({
                 ...data,
@@ -44,7 +39,7 @@ const Login = ({navigation}) => {
                 isValidUser: false
             });
         }
-    }
+   }
 
     const handlePasswordChange = (val) => {
         if( val.trim().length >= 8 ) {
@@ -107,7 +102,9 @@ const Login = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+          <ImageBackground style={{flex: 1,}}
+        source= {signinpic} resizeMode= 'cover' > 
+           {/* <StatusBar backgroundColor='#009387' barStyle="light-content"/> */} 
         <View style={styles.header}>
             <Text style={styles.text_header}>Welcome!</Text>
         </View>
@@ -220,21 +217,23 @@ const Login = ({navigation}) => {
                 </TouchableOpacity>
             </View>
         </Animatable.View>
+        </ImageBackground>
+        
       </View>
-    );
-};
+    )
 
+};
+    
+    
 
 const styles = StyleSheet.create({
     container: {
                  flex: 1,
-                 justifyContent: 'center',
-                 alignItems: 'center',
                  backgroundColor: '#F5FCFF',
                  flexDirection: 'column',
             },
                  backgroundImage:{
-                 width:320,
+                 width:400,
                  height:480,
 
     },
@@ -298,7 +297,7 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
 });
 export default Login;

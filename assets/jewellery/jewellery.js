@@ -95,7 +95,12 @@ const jewellery =[
         like: true,
         Image: require('../images/set-12.jpg'),
     },
-
+    
 ]
 
 export default jewellery
+
+
+export function getjewellery(id) {
+    return jewellery.find((jewellery) => (jewellery.id == id));
+}

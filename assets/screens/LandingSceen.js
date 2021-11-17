@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, Button, TextInput,StyleSheet, Image} from "react-native";
+import {View, Text, Dimensions, ImageBackground, Button, TextInput,StyleSheet, Image} from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon1 from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/AntDesign";
@@ -8,32 +8,39 @@ import COLOURS from "../const/colours";
 import { FontDisplay, useFonts } from "expo-font";
 
 
-
 const landing_page = ({navigation}) => {
   return (
+    
     <View style={styles.container}>
-      <View style={styles.topContainer}>
-        <Text style={styles.h1}>WELCOME to . .  .</Text>
+      <ImageBackground style={{flex: 1,}}
+        source= {Logo} resizeMode= 'cover' >
+          <View style={styles.topContainer}>
+        <Text style={styles.h1}>WELCOME to MAMBO</Text>
         <Text style={styles.h2}>Providing quality but affordable adornments.</Text>
       </View>
-      <View style={styles.containerRightAligned}>
+      {/* <View style={styles.containerRightAligned}>
         <Image source={Logo} style={styles.image}/>
-      </View>
+      </View> */}
       <View style={styles.buttonContainer}>
         <Button
           title="SIGN UP"
           style={styles.Button}
-          onPress={() => this.onPress()}
-          color="#000"
+         // onPress={() => this.onPress()}
+           color="#000"
         />
+        <View style={{height: 10}} />
+
         <Button
         title= "LOGIN"
-        STYLE={styles.Button}
-        onPress={() => this.onPress()}
+        style={{marginBottom: 30}}
+       // onPress={() => this.onPress()}
         color= "#000000"
         />
         </View>
+    </ImageBackground>
+      
     </View>
+    
   )
 }
 export default landing_page
@@ -41,54 +48,59 @@ export default landing_page
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
     backgroundColor: "#556B2F",
-    alignItems: 'center',
-    width: '100%',
+    // justifyContent: "center"
     
   },
   h1: {
-    color: '#000000',
+    color: 'white',
     fontSize: 40,
     fontStyle: "italic",
+    fontFamily: "Bradley Hand ITC",
     
   },
   h2: {
-    color: '#000000',
+    color: 'white',
     fontSize: 18,
     marginTop: 8,
 
   },
   image: {
-    width: 450,
-    height:560,
+    marginTop: -120,
+    width: 400,
+    height:(Dimensions.get("window").height)*(2/3),
     justifyContent: "center",
   },
   buttonContainer: {
-    backgroundColor: '#000000',
+    flex: 1,
     borderRadius: 5,
     padding: 8,
     margin: 8,
+    // marginBottom: 50,
+    //position: 'absolute',
   },
   topContainer: {
-    flex: 2,
+    flex: 4,
+    // marginTop: 55,
     justifyContent: 'center',
     alignItems: 'center',
+    // height: Dimensions.get("window").height/3
   },
 middleContainer: {
-    flex: 3,
+    // flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
-bottomContainer: {
-    justifyContent: 'flex-end',
-    width: '90%',
-    margin: 20,
-    padding: 10,
-  },
+Button: {
+    width: '40%',
+    marginBottom: 10,
+    backgroundColor: "#0ff762",
+},
   containerRightAligned: {
-    position: 'absolute',
-    right: 50,
-    top: '5%',
-    alignItems: 'stretch',   },
+    // position: 'absolute',
+    right: 0,
+    // top: '15%',
+    // bottom: '15%',
+    // alignItems: 'stretch',   
+  },
 });

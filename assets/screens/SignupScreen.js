@@ -1,6 +1,6 @@
-import { setStatusBarBackgroundColor } from "expo-status-bar";
+//import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, SafeAreaView, StyleSheet, TextInput,StatusBar,TouchableOpacity,Dimensions,ScrollView,Platform } from "react-native";
+import { Button, SafeAreaView, StyleSheet, ImageBackground, TextInput,StatusBar,TouchableOpacity,Dimensions,ScrollView,Platform } from "react-native";
 import {View,Text} from "react-native";
 import COLOURS from "../const/colours";
 import Icon from "react-native-vector-icons";
@@ -8,7 +8,7 @@ import * as Animatable from 'react-native-animatable';
 //import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-
+import signuppic from "../images/signuppic.jpg";
 const SignupScreen = ({navigation}) => {
 
     const [data, setData] = React.useState({
@@ -66,7 +66,9 @@ const SignupScreen = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+           <ImageBackground style={{flex: 1,}}
+        source= {signuppic} resizeMode= 'cover' >
+          <StatusBar backgroundColor='#000000' barStyle="light-content"/>
         <View style={styles.header}>
             <Text style={styles.text_header}>Register Now!</Text>
         </View>
@@ -183,14 +185,14 @@ const SignupScreen = ({navigation}) => {
                     style={styles.signIn}
                     onPress={() => {}}
                 >
-                <LinearGradient
+                {/* <LinearGradient
                     colors={['#08d4c4', '#01ab9d']}
-                    style={styles.signIn}
-                >
+                    style={styles.signIn} */}
+                {/* > */}
                     <Text style={[styles.textSign, {
                         color:'#fff'
                     }]}>Sign Up</Text>
-                </LinearGradient>
+                {/* </LinearGradient> */}
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -202,12 +204,13 @@ const SignupScreen = ({navigation}) => {
                     }]}
                 >
                     <Text style={[styles.textSign, {
-                        color: '#009387'
-                    }]}>Sign In</Text>
+                        color: '#330066'
+                    }]}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>
         </Animatable.View>
+        </ImageBackground>
       </View>
     );
 };
@@ -216,7 +219,7 @@ const SignupScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#000000'
     },
     header: {
         flex: 1,
