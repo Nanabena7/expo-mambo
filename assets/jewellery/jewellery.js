@@ -1,106 +1,106 @@
 
-const jewellery =[
+const Jewellery =[
     {
-        id: 1,
+        id: 0,
         name: 'Vintage Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-1.jpg'),
+        img: require("../images/set1.jpg"),
+    },
+
+    {
+        id: 1,
+        name: 'IPARAM Bohemian set',
+        price: '6.99',
+        like: true,
+        img: require('../images/set-2.jpg'),
     },
 
     {
         id: 2,
-        name: 'IPARAM Bohemian set',
+        name: 'Dainty Set',
         price: '6.99',
         like: true,
-        Image: require('../images/set-2.jpg'),
+        img: require('../images/set-3.jpg'),
     },
 
     {
         id: 3,
-        name: 'Dainty Set',
-        price: '6.99',
+        name: 'AprilWell Set',
+        price: '5.99',
         like: true,
-        Image: require('../images/set-3.jpg'),
+        img: require('../images/set-4.jpg'),
     },
 
     {
         id: 4,
-        name: 'AprilWell Set',
+        name: 'Butterfly Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-4.jpg'),
+        img: require('../images/set-5.jpg'),
     },
 
     {
         id: 5,
-        name: 'Butterfly Set',
+        name: 'Rainbow White Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-5.jpg'),
+        img: require('../images/set-6.jpg'),
     },
 
     {
         id: 6,
-        name: 'Rainbow White Set',
+        name: 'Snakebite Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-6.jpg'),
+        img: require('../images/set-7.jpg'),
     },
 
     {
         id: 7,
-        name: 'Snakebite Set',
+        name: 'Coil Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-7.jpg'),
+        img: require('../images/set-8.jpg'),
     },
 
     {
         id: 8,
-        name: 'Coil Set',
-        price: '5.99',
+        name: 'Complete Silver Set',
+        price: '15.99',
         like: true,
-        Image: require('../images/set-8.jpg'),
+        img: require('../images/set-9.jpg'),
     },
 
     {
         id: 9,
-        name: 'Complete Silver Set',
-        price: '15.99',
+        name: 'Width Set',
+        price: '9.99',
         like: true,
-        Image: require('../images/set-9.jpg'),
+        img: require('../images/set-10.jpg'),
     },
 
     {
         id: 10,
-        name: 'Width Set',
-        price: '9.99',
+        name: 'Sterling Silver Set',
+        price: '6.99',
         like: true,
-        Image: require('../images/set-10.jpg'),
+        img: require('../images/set-11.JPG'),
     },
 
     {
         id: 11,
-        name: 'Sterling Silver Set',
-        price: '6.99',
-        like: true,
-        Image: require('../images/set-11.jpg'),
-    },
-
-    {
-        id: 12,
         name: 'Flower Set',
         price: '5.99',
         like: true,
-        Image: require('../images/set-12.jpg'),
+        img: require('../images/set-12.jpg'),
     },
     
 ]
 
-export default jewellery
+export default Jewellery
 
 
-export function getjewellery(id) {
-    return jewellery.find((jewellery) => (jewellery.id == id));
-}
+// export function getjewellery(id) {
+//     return jewellery.find((jewellery) => (jewellery.id == id));
+// }

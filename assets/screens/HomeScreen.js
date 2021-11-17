@@ -1,19 +1,17 @@
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React from "react";
-import { Button, Dimensions, FlatList, ImageBackground, SafeAreaView, StyleSheet, TextInput } from "react-native";
-import {View,Text} from "react-native";
+import {View,Text,Dimensions, ImageBackground, SafeAreaView, StyleSheet, TextInput, Image, ScrollView, TouchableOpacity } from "react-native";
 import COLOURS from "../const/colours";
 import Icon from "react-native-vector-icons/AntDesign";
 import Icon1 from "react-native-vector-icons/MaterialCommunityIcons"
-import jewellery from "../jewellery/jewellery";
+import Jewellery from "../jewellery/jewellery";
 import home from "../images/home.jpg";
+import Cart from "./CartScreen";
 
 const width = Dimensions.get("screen").width/2-30;
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
 
-    const Card = (item) =>{
-     return <View style= {style.Card}></View>
-    } 
+   
     return (
         <SafeAreaView
             style={{
@@ -29,8 +27,8 @@ const HomeScreen = () => {
                     <Text style ={{ fontSize:16, fontStyle: 'italic', colour: COLOURS.gold}}>to</Text>
                     <Text style ={{ fontSize:38, fontWeight: 'bold', fontStyle: 'italic', fontWeight: 'bold', colour: COLOURS.purple}}>MAMBO</Text>
                 </View>
+                <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
                 <Icon name= "shoppingcart" size= {28}/>
-                </View>
                <View style= {{marginTop:30,flexDirection: 'row',}}>
                    <View style= {style.searchcontainer}>
                        <Icon name= "search1" size={30} style={{marginleft: 20}}/>
@@ -39,20 +37,29 @@ const HomeScreen = () => {
                     <View style={style.sortBtn}>
                         <Icon1 name="sort" size={30} color={COLOURS.purple}/>
                     </View>
-
             </View>
-               <FlatList 
-               columnWrapperStyle={{justifyContent: 'space-between'}}
-               showsVerticalScrollIndicator={false}
-               contentContainerStyle= 
-               {
-                  ( {marginTop: 12},
-                   {paddingBottom: 50})
-                  }
-               numColumns= {2}
-
-               data={jewellery} 
-               renderItem={({item})=> <Card jewellery= {item}/>}></FlatList>
+        
+            </TouchableOpacity>
+           </View>
+            <View>
+               <ScrollView>
+                   <View style={style.Cards}>
+                   {
+                   Jewellery.map((item,index)=>(
+                        <View key={item.id} style={style.Card}>
+                            <View><Image source={item.img}/> </View>
+                            <Text> {item.name}</Text>
+                            <Text> {item.price}</Text>
+                        </View>
+                   ))
+                   }
+                   </View>
+               </ScrollView>
+               </View>
+               <TouchableOpacity>
+                  
+                    </TouchableOpacity>
+                    
                </ImageBackground>
         </SafeAreaView>
     );
@@ -87,14 +94,16 @@ const style = StyleSheet.create({
         alignItems: "center",
         borderRadius: 12,
     },
-    Card: {
-        height: 230,
+    Cards: {
         backgroundColor: COLOURS.white,
-        width,
-        marginBottom: 20,
-        marginHorizontal: 2,
-        borderRadius: 10,
-        padding: 20,
+        flexDirection:'row',
+        flexWrap: 'wrap',
+        marginLeft: 30
+    },
+    Card: {
+        backgroundColor: COLOURS.white,
+       width: 150,
+       height:150
     }
 })
 

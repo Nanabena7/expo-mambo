@@ -233,12 +233,6 @@ const [data, setData] = React.useState({
                     
                     
                 </TouchableOpacity>
-                {/* <Button
-                    title= "Back to Home"
-                    style={{marginBottom: 30}}
-                   onPress={() => navigation.goBack()}
-                    color= "#000000"
-                    /> */}
               
             </View>
         </Animatable.View>
